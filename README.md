@@ -47,5 +47,10 @@ This project originated from frustration with the common pure-CSS tab implementa
 
 While experimenting with CSS animations and hover-driven UI effects, it became clear that content visibility could be controlled directly through animated hover states — without introducing artificial form elements. The result is a simpler, more fluid approach to CSS-only content switching.
 
+## Demo
+
+Check out the live demo on GitHub Pages:  
+[https://johnfullerroot.github.io/pure-css-hover-based-content-switcher/](https://johnfullerroot.github.io/pure-css-hover-based-content-switcher/)
+
 ## License
 GPL-3.0-only
