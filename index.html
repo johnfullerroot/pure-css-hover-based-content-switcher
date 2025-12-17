@@ -120,7 +120,7 @@
         	opacity: 0;
         }
 
-        #menuhover:hover .menuitem {
+        #menuhover:hover .menuitem, #menuhover:focus-within .menuitem {
         	animation-name: animatemenu;
         	animation-duration: 500ms;
         	animation-timing-function: linear;
@@ -146,7 +146,7 @@
 	        }
         }
 
-        #menuhover:hover .topborder {
+        #menuhover:hover .topborder, #menuhover:focus-within .topborder{
 	        animation-name: animatetop;
 	        animation-duration: 500ms;
 	        animation-timing-function: linear;
@@ -165,7 +165,7 @@
 	        }
         }
 
-        #menuhover:hover .bottomborder {
+        #menuhover:hover .bottomborder, #menuhover:focus-within .bottomborder {
 	        animation-name: animatebottom;
 	        animation-duration: 500ms;
 	        animation-timing-function: linear;
@@ -184,7 +184,7 @@
 	        }
         }
 
-        #menuhover:hover .leftgradient {
+        #menuhover:hover .leftgradient, #menuhover:focus-within .leftgradient {
 	        animation-name: animateleftgradient;
 	        animation-duration: 1000ms;
 	        animation-delay: 300ms;
@@ -204,7 +204,7 @@
 	        }
         }
 
-        #menuhover:hover .leftbar {
+        #menuhover:hover .leftbar, #menuhover:focus-within .leftbar {
 	        animation-name: animateleftbar;
 	        animation-duration: 300ms;
 	        animation-timing-function: linear;
@@ -231,7 +231,7 @@
 	        }
         }
 
-        #menuhover:hover .movinggradient {
+        #menuhover:hover .movinggradient, #menuhover:focus-within .movinggradient {
 	        animation-name: slidegradient;
 	        animation-duration: 300ms;
 	        animation-timing-function: linear;
@@ -264,7 +264,7 @@
 	        padding: 0px;
         }
 
-        #contenthover1:hover .content1 {
+        #contenthover1:hover .content1, #contenthover1:focus-within .content1 {
 	        animation-name: animatecontent1;
 	        animation-duration: 300ms;
 	        animation-fill-mode: forwards;
@@ -291,7 +291,7 @@
 	        padding: 0px;
         }
 
-        #contenthover2:hover .content2 {
+        #contenthover2:hover .content2, #contenthover1:focus-within .content2 {
 	        animation-name: animatecontent2;
 	        animation-duration: 300ms;
 	        animation-fill-mode: forwards;
@@ -318,7 +318,7 @@
 	        padding: 0px;
         }
 
-        #contenthover3:hover .content3 {
+        #contenthover3:hover .content3, #contenthover1:focus-within .content3 {
 	        animation-name: animatecontent3;
 	        animation-duration: 300ms;
 	        animation-fill-mode: forwards;
@@ -345,7 +345,7 @@
 	        padding: 0px;
         }
 
-        #contenthover4:hover .content4 {
+        #contenthover4:hover .content4, #contenthover1:focus-within .content4 {
 	        animation-name: animatecontent4;
 	        animation-duration: 300ms;
 	        animation-fill-mode: forwards;
@@ -372,7 +372,7 @@
 	        padding: 0px;
         }
 
-        #contenthover5:hover .content5 {
+        #contenthover5:hover .content5, #contenthover1:focus-within .content5 {
         	animation-name: animatecontent5;
         	animation-duration: 300ms;
         	animation-fill-mode: forwards;
@@ -399,7 +399,7 @@
         	padding: 0px;
         }
 
-        #contenthover6:hover .content6 {
+        #contenthover6:hover .content6, #contenthover1:focus-within .content6 {
         	animation-name: animatecontent6;
         	animation-duration: 300ms;
         	animation-fill-mode: forwards;
@@ -426,8 +426,8 @@
 
 	<div id="menucontainer">
 
-		<div id="menuhover">
-			<div id="contenthover1">
+        <div id="menuhover" tabindex="0">
+            <div id="contenthover1" tabindex="0">
 
 				<div id="menusegment">
 
@@ -452,8 +452,8 @@
 			</div>
 		</div>
 
-		<div id="menuhover">
-			<div id="contenthover2">
+        <div id="menuhover" tabindex="0">
+            <div id="contenthover2" tabindex="0">
 
 				<div id="menusegment">
 
@@ -478,8 +478,8 @@
 			</div>
 		</div>
 
-		<div id="menuhover">
-			<div id="contenthover3">
+        <div id="menuhover" tabindex="0">
+            <div id="contenthover3" tabindex="0">
 
 				<div id="menusegment">
 
@@ -504,8 +504,8 @@
 			</div>
 		</div>
 
-		<div id="menuhover">
-			<div id="contenthover4">
+        <div id="menuhover" tabindex="0">
+            <div id="contenthover4" tabindex="0">
 
 				<div id="menusegment">
 
@@ -530,8 +530,8 @@
 			</div>
 		</div>
 
-		<div id="menuhover">
-			<div id="contenthover5">
+        <div id="menuhover" tabindex="0">
+            <div id="contenthover5" tabindex="0">
 
 				<div id="menusegment">
 
@@ -555,8 +555,8 @@
 			</div>
 		</div>
 
-		<div id="menuhover">
-			<div id="contenthover6">
+        <div id="menuhover" tabindex="0">
+            <div id="contenthover6" tabindex="0">
 
 				<div id="menusegment">
 
