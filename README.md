@@ -35,5 +35,17 @@ Most “pure CSS tabs” online rely on checkbox/radio input hacks. These have l
 
 This project’s hover-only method is simpler, faster, and more natural for previewing or switching content quickly.
 
+## Viewing on Mobile
+
+This demo is best viewed on mobile devices in **landscape orientation**.
+
+In portrait mode, the menu items remain visible, but the content panel extends beyond the viewport and requires horizontal scrolling. This is a layout choice for the demo rather than a limitation of the technique itself.
+
+## Background and Motivation
+
+This project originated from frustration with the common pure-CSS tab implementations that rely on hidden checkbox or radio input hacks.
+
+While experimenting with CSS animations and hover-driven UI effects, it became clear that content visibility could be controlled directly through animated hover states — without introducing artificial form elements. The result is a simpler, more fluid approach to CSS-only content switching.
+
 ## License
 GPL-3.0-only
