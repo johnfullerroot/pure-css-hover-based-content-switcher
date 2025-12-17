@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pure CSS Content Switcher Using Hover Visibility Toggle (No JS and No Clunky Checkbox/Raio Button Hack)</title>
+    <style>
+
+        body {
+        	background-color: #000;
+        	color: #618fe8;
+        	font-family: "Tahoma", sans-serif;
+        	margin: 0px;
+        	padding: 0px;
+        }
+
+        #sectioncontainer {
+        	position: absolute;
+        	left: 0px;
+        	top: 0px;
+        	background-color: #000;
+        	margin: 0px;
+        	padding: 0px;
+        	width: 1050px;
+        	height: 540px;
+        }
+
+        #menucontainer {
+        	position: absolute;
+        	left: 20px;
+        	top: 20px;
+        	background-color: #000;
+        	margin: 0px;
+        	padding: 0px;
+        	width: 360px;
+        	height: 500px;
+        }
+
+        #contentcontainer {
+        	position: absolute;
+        	left: 400px;
+        	top: 20px;
+        	background-color: #000;
+        	opacity: 0;
+        	margin: 0px;
+        	padding: 0px;
+        	width: 500px;
+        	height: 500px;
+        }
+
+        #menusegment {
+        	position: relative;
+        	left: 25px;
+        	top: 25px;
+        	background-color: #000;
+        	margin: 0px;
+        	padding: 0px;
+        	width: 310px;
+        	height: 50px;
+        }
+
+        .leftbar {
+        	position: absolute;
+        	background-color: #618fe8;
+        	left: 25px;
+        	top: 8px;
+        	width: 2px;
+        	height: 36px;
+        }
+
+        .menuitem {
+        	position: absolute;
+        	background-color: #000;
+        	left: 34px;
+        	top: 10px;
+        	width: 260px;
+        	height: 33px;
+        	color: #618fe8;
+        	font-family: "Tahoma", sans-serif;
+        	font-size: 25px;
+        	font-weight: 400;
+        }
+
+        .topborder {
+        	position: absolute;
+        	left: 34px;
+        	top: 8px;
+        	width: 260px;
+        	height: 2px;
+        }
+
+        .bottomborder {
+        	position: absolute;
+        	left: 34px;
+        	top: 42px;
+        	width: 260px;
+        	height: 2px;
+        }
+
+        .movinggradient {
+        	visibility: hidden;
+        	background: #618fe8;
+        	opacity: 0.5;
+        	position: absolute;
+        	left: -500px;
+        	top: 8px;
+        	width: 40px;
+        	height: 35px;
+        	box-shadow: 0px 0px 50px 10px #618fe8;
+        }
+
+        .leftgradient {
+        	background: linear-gradient(90deg, #00000000 0%, #618fe8ff 100%);
+        	position: absolute;
+        	left: -15px;
+        	top: 8px;
+        	width: 30px;
+        	height: 36px;
+        	opacity: 0;
+        }
+
+        #menuhover:hover .menuitem {
+        	animation-name: animatemenu;
+        	animation-duration: 500ms;
+        	animation-timing-function: linear;
+        	animation-fill-mode: forwards;
+        }
+
+        @keyframes animatemenu {
+        	0% {
+        		padding-left: 0px;
+        		border-left: 2px solid #618fe8;
+        		background: linear-gradient(90deg, #618fe8ff 0%, #000000ff 100%);
+        		color: #fff;
+        		font-weight: 500;
+        		opacity: 0;
+        	}
+        	100% {
+        		padding-left: 5px;
+           		border-left: 2px solid #618fe8;
+        		background: linear-gradient(90deg, #618fe8ff 0%, #000000ff 100%);
+        		color: #fff;
+        		font-weight: 500;
+        		opacity: 1;
+	        }
+        }
+
+        #menuhover:hover .topborder {
+	        animation-name: animatetop;
+	        animation-duration: 500ms;
+	        animation-timing-function: linear;
+	        animation-fill-mode: forwards;
+	        boder-radius: 1px;
+        }
+
+        @keyframes animatetop {
+	        0% {
+		        background: linear-gradient(90deg, #618fe8ff 50%, #000000ff 100%);
+		        opacity: 0;
+	        }
+	        100% {
+		        background: linear-gradient(90deg, #618fe8ff 50%, #000000ff 100%);
+		        opacity: 1;
+	        }
+        }
+
+        #menuhover:hover .bottomborder {
+	        animation-name: animatebottom;
+	        animation-duration: 500ms;
+	        animation-timing-function: linear;
+	        animation-fill-mode: forwards;
+	        boder-radius: 1px;
+        }
+
+        @keyframes animatebottom {
+	        0% {
+		        background: linear-gradient(90deg, #618fe8ff 50%, #000000ff 100%);
+		        opacity: 0;
+	        }
+	        100% {
+		        background: linear-gradient(90deg, #618fe8ff 50%, #000000ff 100%);
+		        opacity: 1;
+	        }
+        }
+
+        #menuhover:hover .leftgradient {
+	        animation-name: animateleftgradient;
+	        animation-duration: 1000ms;
+	        animation-delay: 300ms;
+	        animation-timing-function: ease-in-out;
+	        animation-direction: alternate;
+	        animation-iteration-count: infinite;
+        }
+
+        @keyframes animateleftgradient {
+	        0% {
+		        opacity: 0.5;
+		        left: -13px;
+	        }
+	        100% {
+		        left: -15px;
+		        opacity: 1;
+	        }
+        }
+
+        #menuhover:hover .leftbar {
+	        animation-name: animateleftbar;
+	        animation-duration: 300ms;
+	        animation-timing-function: linear;
+	        animation-fill-mode: forwards;
+	        boder-radius: 1px;
+        }
+
+        @keyframes animateleftbar {
+	        0% {
+		        background-color: #406dc6;
+		        border: 2px solid #618fe8;
+		        left: 30px;
+		        top: 8px;
+		        width: 8px;
+		        height: 32px;
+	        }
+	        100% {
+		        background-color: #406dc6;
+		        border: 2px solid #618fe8;
+		        left: 15px;
+		        top: 8px;
+		        width: 8px;
+		        height: 32px;
+	        }
+        }
+
+        #menuhover:hover .movinggradient {
+	        animation-name: slidegradient;
+	        animation-duration: 300ms;
+	        animation-timing-function: linear;
+        }
+
+        @keyframes slidegradient {
+	        0% {
+		        visibility: visible;
+		        left: 20px;
+	        }
+	        50% {
+		        left: 115px;
+		        opacity: 0.5;
+	        }
+	        100% {
+		        left: 240px;
+		        opacity: 0;
+	        }
+        }
+
+        .content1 {
+	        visibility: hidden;
+	        position: absolute;
+	        background-color: #000;
+	        left: 360px;
+	        top: -25px;
+	        width: 620px;
+	        height: 500px;
+	        margin: 0px;
+	        padding: 0px;
+        }
+
+        #contenthover1:hover .content1 {
+	        animation-name: animatecontent1;
+	        animation-duration: 300ms;
+	        animation-fill-mode: forwards;
+        }
+
+        @keyframes animatecontent1 {
+	        0% {
+		        visibility: visible;
+	        }
+	        100% {
+		        visibility: visible;
+	        }
+        }
+
+        .content2 {
+	        visibility: hidden;
+	        position: absolute;
+	        background-color: #000;
+	        left: 360px;
+	        top: -75px;
+	        width: 620px;
+	        height: 500px;
+	        margin: 0px;
+	        padding: 0px;
+        }
+
+        #contenthover2:hover .content2 {
+	        animation-name: animatecontent2;
+	        animation-duration: 300ms;
+	        animation-fill-mode: forwards;
+        }
+
+        @keyframes animatecontent2 {
+	        0% {
+		        visibility: visible;
+	        }
+	        100% {
+		        visibility: visible;
+	        }
+        }
+
+        .content3 {
+	        visibility: hidden;
+	        position: absolute;
+	        background-color: #000;
+	        left: 360px;
+	        top: -125px;
+	        width: 620px;
+	        height: 500px;
+	        margin: 0px;
+	        padding: 0px;
+        }
+
+        #contenthover3:hover .content3 {
+	        animation-name: animatecontent3;
+	        animation-duration: 300ms;
+	        animation-fill-mode: forwards;
+        }
+
+        @keyframes animatecontent3 {
+	        0% {
+		        visibility: visible;
+	        }
+	        100% {
+		        visibility: visible;
+	        }
+        }
+
+        .content4 {
+	        visibility: hidden;
+	        position: absolute;
+	        background-color: #000;
+	        left: 360px;
+	        top: -175px;
+	        width: 620px;
+	        height: 500px;
+	        margin: 0px;
+	        padding: 0px;
+        }
+
+        #contenthover4:hover .content4 {
+	        animation-name: animatecontent4;
+	        animation-duration: 300ms;
+	        animation-fill-mode: forwards;
+        }
+
+        @keyframes animatecontent4 {
+	        0% {
+		        visibility: visible;
+	        }
+	        100% {
+		        visibility: visible;
+	        }
+        }
+
+        .content5 {
+	        visibility: hidden;
+	        position: absolute;
+	        background-color: #000;
+	        left: 360px;
+	        top: -225px;
+	        width: 620px;
+	        height: 500px;
+	        margin: 0px;
+	        padding: 0px;
+        }
+
+        #contenthover5:hover .content5 {
+        	animation-name: animatecontent5;
+        	animation-duration: 300ms;
+        	animation-fill-mode: forwards;
+        }
+
+        @keyframes animatecontent5 {
+        	0% {
+        		visibility: visible;
+        	}
+        	100% {
+        		visibility: visible;
+        	}
+        }
+
+        .content6 {
+        	visibility: hidden;
+        	position: absolute;
+        	background-color: #000;
+        	left: 360px;
+        	top: -275px;
+        	width: 620px;
+        	height: 500px;
+        	margin: 0px;
+        	padding: 0px;
+        }
+
+        #contenthover6:hover .content6 {
+        	animation-name: animatecontent6;
+        	animation-duration: 300ms;
+        	animation-fill-mode: forwards;
+        }
+
+        @keyframes animatecontent6 {
+        	0% {
+        		visibility: visible;
+        	}
+        	100% {
+        		visibility: visible;
+        	}
+        }
+
+        .innercontentbox {
+        	padding: 10px;
+        	width: 720px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="sectioncontainer">
+
+	<div id="menucontainer">
+
+		<div id="menuhover">
+			<div id="contenthover1">
+
+				<div id="menusegment">
+
+					<div class="leftgradient"></div>
+					<div class="leftbar"></div>
+					<div class="topborder"></div>
+					<div class="menuitem">CONTENT ITEM 1</div>
+					<div class="bottomborder"></div>
+					<div class="movinggradient"></div>
+					<div class="content1">
+
+						<div class="innercontentbox">
+							<div style="width: 600px;">
+								<h1>CONTENT #1</h1>
+								<p>The quick green Grogu levitated over the lazy Jabba.</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="menuhover">
+			<div id="contenthover2">
+
+				<div id="menusegment">
+
+					<div class="leftgradient"></div>
+					<div class="leftbar"></div>
+					<div class="topborder"></div>
+					<div class="menuitem">CONTENT ITEM 2</div>
+					<div class="bottomborder"></div>
+					<div class="movinggradient"></div>
+					<div class="content2">
+
+						<div class="innercontentbox">
+							<div style="width: 600px;">
+								<h1>CONTENT #2</h1>
+								<p>All the content divs have their visibility set to hidden.</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="menuhover">
+			<div id="contenthover3">
+
+				<div id="menusegment">
+
+					<div class="leftgradient"></div>
+					<div class="leftbar"></div>
+					<div class="topborder"></div>
+					<div class="menuitem">CONTENT ITEM 3</div>
+					<div class="bottomborder"></div>
+					<div class="movinggradient"></div>
+					<div class="content3">
+
+						<div class="innercontentbox">
+							<div style="width: 600px;">
+								<h1>CONTENT #3</h1>
+								<p>Their positions are absolute.</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="menuhover">
+			<div id="contenthover4">
+
+				<div id="menusegment">
+
+					<div class="leftgradient"></div>
+					<div class="leftbar"></div>
+					<div class="topborder"></div>
+					<div class="menuitem">CONTENT ITEM 4</div>
+					<div class="bottomborder"></div>
+					<div class="movinggradient"></div>
+					<div class="content4">
+
+						<div class="innercontentbox">
+							<div style="width: 600px;">
+								<h1>CONTENT #4</h1>
+								<p>They become visible via on hover animation.</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="menuhover">
+			<div id="contenthover5">
+
+				<div id="menusegment">
+
+					<div class="leftgradient"></div>
+					<div class="leftbar"></div>
+					<div class="topborder"></div>
+					<div class="menuitem">CONTENT ITEM 5</div>
+					<div class="bottomborder"></div>
+					<div class="movinggradient"></div>
+					<div class="content5">
+
+						<div class="innercontentbox">
+							<div style="width: 600px;">
+								<h1>CONTENT #5</h1>
+								<p>No JavaScript is required. Pure css only.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="menuhover">
+			<div id="contenthover6">
+
+				<div id="menusegment">
+
+					<div class="leftgradient"></div>
+					<div class="leftbar"></div>
+					<div class="topborder"></div>
+					<div class="menuitem">CONTENT ITEM 6</div>
+					<div class="bottomborder"></div>
+					<div class="movinggradient"></div>
+					<div class="content6">
+						<div class="innercontentbox">
+							<div style="width: 600px;">
+								<h1>CONTENT #6</h1>
+								<p>Coded by John Fuller-Root johnfullerroot {at} gmail.com.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="contentcontainer"></div>
+
+</div>
+</body>
+</html>
